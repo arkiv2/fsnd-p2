@@ -21,10 +21,12 @@ import jinja2
 
 from models import Post
 from datetime import datetime
+from date_prettify import date_prettify
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
 							   autoescape = True)
+jinja_env.filters['timesince'] = date_prettify
 
 def render_str(template, **params):
     t = jinja_env.get_template(template)
@@ -40,10 +42,9 @@ class BaseHandler(webapp2.RequestHandler):
 class MainHandler(BaseHandler):
     def get(self):
     	posts = Post.query().order(-Post.created_at)
-    	now_time = datetime.now()
     	title = "My Project Blog"
     	description = "This is my cool blog"
-        self.render('index.html', title=title, description=description, posts=posts, now_time=now_time)
+        self.render('index.html', title=title, description=description, posts=posts)
 
 class SignUpHandler(BaseHandler):
     def get(self):

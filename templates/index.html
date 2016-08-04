@@ -15,7 +15,7 @@
 	                        {{ post.description }}
 	                    </h3>
 	                </a>
-	                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> {{ now_time - post.created_at }} seconds ago</p>
+	                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a><br> {{ post.created_at|timesince }}</p>
 	            </div>
 	            <hr>
 	        {% endfor %}
