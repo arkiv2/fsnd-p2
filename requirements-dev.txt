@@ -1,0 +1,4 @@
+# Install via pip
+# pip install -r requirements-dev.text
+
+jinja2

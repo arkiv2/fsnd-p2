@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% include 'base/static.inc' %}
+	<title></title>
+</head>
+<body>
+    {% include 'base/navbar.inc' %}
+    {% include 'base/header.inc' %}
+	{% block content %}
+	{% endblock %}
+	<hr>
+	{% include 'base/footer.inc' %}
+</body>
+</html>
