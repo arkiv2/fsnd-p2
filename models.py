@@ -8,8 +8,4 @@ class Post(ndb.Model):
 
 class User(ndb.Model):
 	username = ndb.StringProperty(required=True)
-
-p = Post(title="New Post", description="A new way to ...", content="Booooooooooooooooooom this is a content")
-p.put()
-p = Post(title="New Post2", description="A new way to ...", content="Booooooooooooooooooom this is a content")
-p.put()
+	
